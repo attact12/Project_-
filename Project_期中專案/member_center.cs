@@ -26,15 +26,15 @@ namespace Project_期中專案
             InitializeComponent();
 
         }
-        //public member_center(string acc)
-        //{
-        //    InitializeComponent();
-        //      account2=acc;
-        //}
         private void button1_Click(object sender, EventArgs e)
         {
-            (new Form1()).ShowDialog();
-            
+            OverWriteCustDB ov1 = new OverWriteCustDB();
+            ov1.account2 = this.account2;
+            ov1.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
 
         }
     }

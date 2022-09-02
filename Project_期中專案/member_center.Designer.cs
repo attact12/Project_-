@@ -39,6 +39,7 @@ namespace Project_期中專案
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lab_showname = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -96,6 +97,7 @@ namespace Project_期中專案
             this.button4.TabIndex = 3;
             this.button4.Text = "按讚好物";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -134,6 +136,7 @@ namespace Project_期中專案
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
             this.splitContainer2.Panel1.Controls.Add(this.lab_showname);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Size = new System.Drawing.Size(1036, 790);
@@ -143,11 +146,12 @@ namespace Project_期中專案
             // lab_showname
             // 
             this.lab_showname.AutoSize = true;
-            this.lab_showname.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lab_showname.Location = new System.Drawing.Point(408, 102);
+            this.lab_showname.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lab_showname.Location = new System.Drawing.Point(460, 102);
             this.lab_showname.Name = "lab_showname";
-            this.lab_showname.Size = new System.Drawing.Size(0, 34);
+            this.lab_showname.Size = new System.Drawing.Size(42, 27);
             this.lab_showname.TabIndex = 1;
+            this.lab_showname.Text = "xxx";
             // 
             // label1
             // 
@@ -158,6 +162,16 @@ namespace Project_期中專案
             this.label1.Size = new System.Drawing.Size(168, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "會員中心";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(406, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 27);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "您好,";
             // 
             // member_center
             // 
@@ -191,5 +205,6 @@ namespace Project_期中專案
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label lab_showname;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

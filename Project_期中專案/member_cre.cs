@@ -47,7 +47,7 @@ namespace Project_期中專案
                     {
                         if (form.GetType() == typeof(MainForm))
                         {
-                            ((MainForm)form).account ="您好"+ account1;
+                            ((MainForm)form).account = account1;
                         }
                     }
                     MessageBox.Show("登入成功!");
@@ -70,6 +70,16 @@ namespace Project_期中專案
         private void member_cre_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = isClosed;
+        }
+
+        private void btn_creat_Click(object sender, EventArgs e)
+        {
+            new Form1().ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ForgetPas().ShowDialog();
         }
     }
 }

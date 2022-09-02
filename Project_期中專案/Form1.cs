@@ -14,10 +14,12 @@ namespace Project_期中專案
     {
         iSpanProjectEntities dbindex = new iSpanProjectEntities();
         byte[] bytes;
+        public string account;
+        
         public Form1()
         {
             InitializeComponent();
-
+            
         }
 
         private void btn_save_Click(object sender, EventArgs e)

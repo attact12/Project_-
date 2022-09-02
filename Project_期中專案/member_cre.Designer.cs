@@ -36,6 +36,7 @@ namespace Project_期中專案
             this.btn_creat = new System.Windows.Forms.Button();
             this.btn_Sigin = new System.Windows.Forms.Button();
             this.btn_cancle = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassord
@@ -45,6 +46,7 @@ namespace Project_期中專案
             this.txtPassord.Name = "txtPassord";
             this.txtPassord.Size = new System.Drawing.Size(140, 33);
             this.txtPassord.TabIndex = 17;
+            this.txtPassord.Text = "123";
             this.txtPassord.UseSystemPasswordChar = true;
             // 
             // txtAccount
@@ -54,6 +56,7 @@ namespace Project_期中專案
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(140, 33);
             this.txtAccount.TabIndex = 16;
+            this.txtAccount.Text = "attact";
             // 
             // label2
             // 
@@ -83,6 +86,7 @@ namespace Project_期中專案
             this.btn_creat.TabIndex = 18;
             this.btn_creat.Text = "註冊";
             this.btn_creat.UseVisualStyleBackColor = true;
+            this.btn_creat.Click += new System.EventHandler(this.btn_creat_Click);
             // 
             // btn_Sigin
             // 
@@ -104,11 +108,22 @@ namespace Project_期中專案
             this.btn_cancle.UseVisualStyleBackColor = true;
             this.btn_cancle.Click += new System.EventHandler(this.btn_cancle_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(204, 151);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "忘記密碼?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // member_cre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 325);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_cancle);
             this.Controls.Add(this.btn_Sigin);
             this.Controls.Add(this.btn_creat);
@@ -133,5 +148,6 @@ namespace Project_期中專案
         private System.Windows.Forms.Button btn_creat;
         private System.Windows.Forms.Button btn_Sigin;
         private System.Windows.Forms.Button btn_cancle;
+        private System.Windows.Forms.Button button1;
     }
 }
