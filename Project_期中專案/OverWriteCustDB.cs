@@ -38,7 +38,7 @@ namespace Project_期中專案
 
             txtAccount.Text = q.MemberAcc;
             txtPassworld.Text = q.MemberPw;
-            list.RegionID = cmbo_city.SelectedIndex + 1;
+            //list.RegionID = cmbo_city.SelectedIndex + 1;
             //if (q.RegionID == 5)
             //{
             //    string a = "新北市";
