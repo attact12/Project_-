@@ -56,40 +56,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AD.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="ArguePic.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="Argument.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="ArgumentType.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="BigType.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="Comment.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="CommentPic.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="CountryList.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
-    <Compile Include="Coupons.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="Coupon.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_pj.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_pj.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_pj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_pj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_pj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_pj.edmx</DependentUpon>
     </Compile>
     <Compile Include="FAQ.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="FAQType.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
-    <Compile Include="Follows.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="Follow.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="ForgetPas.cs">
       <SubType>Form</SubType>
@@ -103,8 +118,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Likes.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="Like.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -113,7 +128,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MemberAccount.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="member_center.cs">
       <SubType>Form</SubType>
@@ -128,17 +143,17 @@
       <DependentUpon>member_cre.cs</DependentUpon>
     </Compile>
     <Compile Include="mem_Acc.cs" />
-    <Compile Include="OfficialCoupons.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="OfficialCoupon.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetails.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="Order.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
-    <Compile Include="Orders.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderStatuses.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="OrderStatus.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="OverWriteCustDB.cs">
       <SubType>Form</SubType>
@@ -147,45 +162,30 @@
       <DependentUpon>OverWriteCustDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PJ_db.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PJ_db.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PJ_db.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PJ_db.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PJ_db.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PJ_db.edmx</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductDetail.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductPic.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegionList.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="Shipper.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
-    <Compile Include="ShippingStatuses.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+    <Compile Include="ShippingStatus.cs">
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <Compile Include="SmallType.cs">
-      <DependentUpon>PJ_db.tt</DependentUpon>
+      <DependentUpon>db_pj.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ForgetPas.resx">
       <DependentUpon>ForgetPas.cs</DependentUpon>
@@ -214,14 +214,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="PJ_db.edmx">
+    <EntityDeploy Include="db_pj.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PJ_db.Designer.cs</LastGenOutput>
+      <LastGenOutput>db_pj.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
-    <None Include="PJ_db.edmx.diagram">
-      <DependentUpon>PJ_db.edmx</DependentUpon>
+    <None Include="db_pj.edmx.diagram">
+      <DependentUpon>db_pj.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -236,20 +236,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PJ_db.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PJ_db.Context.cs</LastGenOutput>
-      <DependentUpon>PJ_db.edmx</DependentUpon>
-    </Content>
-    <Content Include="PJ_db.edmx.sql" />
-    <Content Include="PJ_db.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PJ_db.edmx</DependentUpon>
-      <LastGenOutput>PJ_db.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="db_pj.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_pj.edmx</DependentUpon>
+      <LastGenOutput>db_pj.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db_pj.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_pj.edmx</DependentUpon>
+      <LastGenOutput>db_pj.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

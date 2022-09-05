@@ -12,13 +12,13 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class Orders
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Orders()
+        public Order()
         {
-            this.Argument = new HashSet<Argument>();
-            this.OrderDetails = new HashSet<OrderDetails>();
+            this.Arguments = new HashSet<Argument>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
         public int OrderID { get; set; }
@@ -31,12 +31,12 @@ namespace Project_期中專案
         public int StatusID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Argument> Argument { get; set; }
-        public virtual Coupons Coupons { get; set; }
+        public virtual ICollection<Argument> Arguments { get; set; }
+        public virtual Coupon Coupon { get; set; }
         public virtual MemberAccount MemberAccount { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual Product Product { get; set; }
-        public virtual OrderStatuses OrderStatuses { get; set; }
+        public virtual OrderStatus OrderStatus { get; set; }
     }
 }

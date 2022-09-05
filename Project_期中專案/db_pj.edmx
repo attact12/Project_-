@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="iSpanProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AD">
           <Key>
             <PropertyRef Name="AdID" />
@@ -581,7 +581,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StoreContainer">
+        <EntityContainer Name="iSpanProjectModelStoreContainer">
           <EntitySet Name="AD" EntityType="Self.AD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArguePic" EntityType="Self.ArguePic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Argument" EntityType="Self.Argument" Schema="dbo" store:Type="Tables" />
@@ -721,157 +721,18 @@
             <End Role="OfficialCoupons" EntitySet="OfficialCoupons" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="iSpanProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="iSpanProjectEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AD" EntityType="iSpanProjectModel.AD" />
-          <EntitySet Name="ArguePic" EntityType="iSpanProjectModel.ArguePic" />
-          <EntitySet Name="Argument" EntityType="iSpanProjectModel.Argument" />
-          <EntitySet Name="ArgumentType" EntityType="iSpanProjectModel.ArgumentType" />
-          <EntitySet Name="BigType" EntityType="iSpanProjectModel.BigType" />
-          <EntitySet Name="Comment" EntityType="iSpanProjectModel.Comment" />
-          <EntitySet Name="CommentPic" EntityType="iSpanProjectModel.CommentPic" />
-          <EntitySet Name="CountryList" EntityType="iSpanProjectModel.CountryList" />
-          <EntitySet Name="Coupons" EntityType="iSpanProjectModel.Coupons" />
-          <EntitySet Name="FAQ" EntityType="iSpanProjectModel.FAQ" />
-          <EntitySet Name="FAQType" EntityType="iSpanProjectModel.FAQType" />
-          <EntitySet Name="Follows" EntityType="iSpanProjectModel.Follows" />
-          <EntitySet Name="Likes" EntityType="iSpanProjectModel.Likes" />
-          <EntitySet Name="MemberAccount" EntityType="iSpanProjectModel.MemberAccount" />
-          <EntitySet Name="OfficialCoupons" EntityType="iSpanProjectModel.OfficialCoupons" />
-          <EntitySet Name="OrderDetails" EntityType="iSpanProjectModel.OrderDetails" />
-          <EntitySet Name="Orders" EntityType="iSpanProjectModel.Orders" />
-          <EntitySet Name="OrderStatuses" EntityType="iSpanProjectModel.OrderStatuses" />
-          <EntitySet Name="Payment" EntityType="iSpanProjectModel.Payment" />
-          <EntitySet Name="Product" EntityType="iSpanProjectModel.Product" />
-          <EntitySet Name="ProductDetail" EntityType="iSpanProjectModel.ProductDetail" />
-          <EntitySet Name="ProductPic" EntityType="iSpanProjectModel.ProductPic" />
-          <EntitySet Name="RegionList" EntityType="iSpanProjectModel.RegionList" />
-          <EntitySet Name="Shipper" EntityType="iSpanProjectModel.Shipper" />
-          <EntitySet Name="ShippingStatuses" EntityType="iSpanProjectModel.ShippingStatuses" />
-          <EntitySet Name="SmallType" EntityType="iSpanProjectModel.SmallType" />
-          <AssociationSet Name="FK_ArguePic_Argument" Association="iSpanProjectModel.FK_ArguePic_Argument">
-            <End Role="Argument" EntitySet="Argument" />
-            <End Role="ArguePic" EntitySet="ArguePic" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Argument_ArgumentType" Association="iSpanProjectModel.FK_Argument_ArgumentType">
-            <End Role="ArgumentType" EntitySet="ArgumentType" />
-            <End Role="Argument" EntitySet="Argument" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Argument_Orders" Association="iSpanProjectModel.FK_Argument_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="Argument" EntitySet="Argument" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Comment_MemberAccount" Association="iSpanProjectModel.FK_Comment_MemberAccount">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="Comment" EntitySet="Comment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Comment_SalesCourt" Association="iSpanProjectModel.FK_Comment_SalesCourt">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Comment" EntitySet="Comment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentPic_Comment" Association="iSpanProjectModel.FK_CommentPic_Comment">
-            <End Role="Comment" EntitySet="Comment" />
-            <End Role="CommentPic" EntitySet="CommentPic" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RegionList_CountryList" Association="iSpanProjectModel.FK_RegionList_CountryList">
-            <End Role="CountryList" EntitySet="CountryList" />
-            <End Role="RegionList" EntitySet="RegionList" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_Coupons" Association="iSpanProjectModel.FK_Orders_Coupons">
-            <End Role="Coupons" EntitySet="Coupons" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wallet_Coupons" Association="iSpanProjectModel.FK_Wallet_Coupons">
-            <End Role="Coupons" EntitySet="Coupons" />
-            <End Role="OfficialCoupons" EntitySet="OfficialCoupons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FAQ_FAQType" Association="iSpanProjectModel.FK_FAQ_FAQType">
-            <End Role="FAQType" EntitySet="FAQType" />
-            <End Role="FAQ" EntitySet="FAQ" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Follows_MemberAccount" Association="iSpanProjectModel.FK_Follows_MemberAccount">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="Follows" EntitySet="Follows" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Follows_MemberAccount1" Association="iSpanProjectModel.FK_Follows_MemberAccount1">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="Follows" EntitySet="Follows" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Likes_MemberAccount" Association="iSpanProjectModel.FK_Likes_MemberAccount">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="Likes" EntitySet="Likes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Likes_Product" Association="iSpanProjectModel.FK_Likes_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Likes" EntitySet="Likes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MemberAccount_RegionList" Association="iSpanProjectModel.FK_MemberAccount_RegionList">
-            <End Role="RegionList" EntitySet="RegionList" />
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_MemberAccount" Association="iSpanProjectModel.FK_Orders_MemberAccount">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SalesCourt_MemberAccount" Association="iSpanProjectModel.FK_SalesCourt_MemberAccount">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wallet_MemberAccount" Association="iSpanProjectModel.FK_Wallet_MemberAccount">
-            <End Role="MemberAccount" EntitySet="MemberAccount" />
-            <End Role="OfficialCoupons" EntitySet="OfficialCoupons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_Orders" Association="iSpanProjectModel.FK_OrderDetails_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="OrderDetails" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_Product" Association="iSpanProjectModel.FK_OrderDetails_Product">
-            <End Role="ProductDetail" EntitySet="ProductDetail" />
-            <End Role="OrderDetails" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_Shipper" Association="iSpanProjectModel.FK_OrderDetails_Shipper">
-            <End Role="Shipper" EntitySet="Shipper" />
-            <End Role="OrderDetails" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_ShippingStatuses" Association="iSpanProjectModel.FK_OrderDetails_ShippingStatuses">
-            <End Role="ShippingStatuses" EntitySet="ShippingStatuses" />
-            <End Role="OrderDetails" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_SalesCourt" Association="iSpanProjectModel.FK_Orders_SalesCourt">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_Statuses" Association="iSpanProjectModel.FK_Orders_Statuses">
-            <End Role="OrderStatuses" EntitySet="OrderStatuses" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_SalesCourt" Association="iSpanProjectModel.FK_Product_SalesCourt">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="ProductDetail" EntitySet="ProductDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_Shipper" Association="iSpanProjectModel.FK_Product_Shipper">
-            <End Role="Shipper" EntitySet="Shipper" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductPic_Product" Association="iSpanProjectModel.FK_ProductPic_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="ProductPic" EntitySet="ProductPic" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SalesCourt_RegionList" Association="iSpanProjectModel.FK_SalesCourt_RegionList">
-            <End Role="RegionList" EntitySet="RegionList" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="AD">
           <Key>
             <PropertyRef Name="AdID" />
           </Key>
           <Property Name="AdID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AdName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AdFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="AdName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
         </EntityType>
         <EntityType Name="ArguePic">
           <Key>
@@ -879,8 +740,8 @@
           </Key>
           <Property Name="ArguePicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ArguementID" Type="Int32" Nullable="false" />
-          <Property Name="ArguePic1" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Argument" Relationship="iSpanProjectModel.FK_ArguePic_Argument" FromRole="ArguePic" ToRole="Argument" />
+          <Property Name="ArguePic1" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Argument" Relationship="Self.FK_ArguePic_Argument" FromRole="ArguePic" ToRole="Argument" />
         </EntityType>
         <EntityType Name="Argument">
           <Key>
@@ -889,26 +750,26 @@
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="ArgumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ChangeorReturn" Type="Boolean" Nullable="false" />
-          <Property Name="Reason" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ArgumentTypeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ArguePic" Relationship="iSpanProjectModel.FK_ArguePic_Argument" FromRole="Argument" ToRole="ArguePic" />
-          <NavigationProperty Name="ArgumentType" Relationship="iSpanProjectModel.FK_Argument_ArgumentType" FromRole="Argument" ToRole="ArgumentType" />
-          <NavigationProperty Name="Orders" Relationship="iSpanProjectModel.FK_Argument_Orders" FromRole="Argument" ToRole="Orders" />
+          <NavigationProperty Name="ArguePics" Relationship="Self.FK_ArguePic_Argument" FromRole="Argument" ToRole="ArguePic" />
+          <NavigationProperty Name="ArgumentType" Relationship="Self.FK_Argument_ArgumentType" FromRole="Argument" ToRole="ArgumentType" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Argument_Orders" FromRole="Argument" ToRole="Orders" />
         </EntityType>
         <EntityType Name="ArgumentType">
           <Key>
             <PropertyRef Name="ArgumentTypeID" />
           </Key>
           <Property Name="ArgumentTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ArgumentTypeName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Argument" Relationship="iSpanProjectModel.FK_Argument_ArgumentType" FromRole="ArgumentType" ToRole="Argument" />
+          <Property Name="ArgumentTypeName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Arguments" Relationship="Self.FK_Argument_ArgumentType" FromRole="ArgumentType" ToRole="Argument" />
         </EntityType>
         <EntityType Name="BigType">
           <Key>
             <PropertyRef Name="BigTypeID" />
           </Key>
           <Property Name="BigTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BigTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BigTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Comment">
           <Key>
@@ -916,12 +777,12 @@
           </Key>
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
-          <Property Name="Comment1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Comment1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Star" Type="Byte" Nullable="false" />
           <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_Comment_MemberAccount" FromRole="Comment" ToRole="MemberAccount" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_Comment_SalesCourt" FromRole="Comment" ToRole="Product" />
-          <NavigationProperty Name="CommentPic" Relationship="iSpanProjectModel.FK_CommentPic_Comment" FromRole="Comment" ToRole="CommentPic" />
+          <NavigationProperty Name="MemberAccount" Relationship="Self.FK_Comment_MemberAccount" FromRole="Comment" ToRole="MemberAccount" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Comment_SalesCourt" FromRole="Comment" ToRole="Product" />
+          <NavigationProperty Name="CommentPics" Relationship="Self.FK_CommentPic_Comment" FromRole="Comment" ToRole="CommentPic" />
         </EntityType>
         <EntityType Name="CommentPic">
           <Key>
@@ -929,95 +790,95 @@
           </Key>
           <Property Name="CommentPicID" Type="Int32" Nullable="false" />
           <Property Name="CommentID" Type="Int32" Nullable="false" />
-          <Property Name="CommentPic1" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Comment" Relationship="iSpanProjectModel.FK_CommentPic_Comment" FromRole="CommentPic" ToRole="Comment" />
+          <Property Name="CommentPic1" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Comment" Relationship="Self.FK_CommentPic_Comment" FromRole="CommentPic" ToRole="Comment" />
         </EntityType>
         <EntityType Name="CountryList">
           <Key>
             <PropertyRef Name="CountryID" />
           </Key>
           <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RegionList" Relationship="iSpanProjectModel.FK_RegionList_CountryList" FromRole="CountryList" ToRole="RegionList" />
+          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="RegionLists" Relationship="Self.FK_RegionList_CountryList" FromRole="CountryList" ToRole="RegionList" />
         </EntityType>
-        <EntityType Name="Coupons">
+        <EntityType Name="Coupon">
           <Key>
             <PropertyRef Name="CouponID" />
           </Key>
           <Property Name="CouponID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CouponName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CouponName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ExpiredDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Discount" Type="Single" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="iSpanProjectModel.FK_Orders_Coupons" FromRole="Coupons" ToRole="Orders" />
-          <NavigationProperty Name="OfficialCoupons" Relationship="iSpanProjectModel.FK_Wallet_Coupons" FromRole="Coupons" ToRole="OfficialCoupons" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Coupons" FromRole="Coupons" ToRole="Orders" />
+          <NavigationProperty Name="OfficialCoupons" Relationship="Self.FK_Wallet_Coupons" FromRole="Coupons" ToRole="OfficialCoupons" />
         </EntityType>
         <EntityType Name="FAQ">
           <Key>
             <PropertyRef Name="FAQID" />
           </Key>
           <Property Name="FAQID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Answer" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Question" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Answer" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FAQTypeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="FAQType" Relationship="iSpanProjectModel.FK_FAQ_FAQType" FromRole="FAQ" ToRole="FAQType" />
+          <NavigationProperty Name="FAQType" Relationship="Self.FK_FAQ_FAQType" FromRole="FAQ" ToRole="FAQType" />
         </EntityType>
         <EntityType Name="FAQType">
           <Key>
             <PropertyRef Name="FAQTypeID" />
           </Key>
           <Property Name="FAQTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FAQTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="FAQ" Relationship="iSpanProjectModel.FK_FAQ_FAQType" FromRole="FAQType" ToRole="FAQ" />
+          <Property Name="FAQTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FAQs" Relationship="Self.FK_FAQ_FAQType" FromRole="FAQType" ToRole="FAQ" />
         </EntityType>
-        <EntityType Name="Follows">
+        <EntityType Name="Follow">
           <Key>
             <PropertyRef Name="FollowID" />
           </Key>
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="FollowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FollowedMemID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_Follows_MemberAccount" FromRole="Follows" ToRole="MemberAccount" />
-          <NavigationProperty Name="MemberAccount1" Relationship="iSpanProjectModel.FK_Follows_MemberAccount1" FromRole="Follows" ToRole="MemberAccount" />
+          <NavigationProperty Name="MemberAccount" Relationship="Self.FK_Follows_MemberAccount" FromRole="Follows" ToRole="MemberAccount" />
+          <NavigationProperty Name="MemberAccount1" Relationship="Self.FK_Follows_MemberAccount1" FromRole="Follows" ToRole="MemberAccount" />
         </EntityType>
-        <EntityType Name="Likes">
+        <EntityType Name="Like">
           <Key>
             <PropertyRef Name="LikeID" />
           </Key>
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="LikeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_Likes_MemberAccount" FromRole="Likes" ToRole="MemberAccount" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_Likes_Product" FromRole="Likes" ToRole="Product" />
+          <NavigationProperty Name="MemberAccount" Relationship="Self.FK_Likes_MemberAccount" FromRole="Likes" ToRole="MemberAccount" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Likes_Product" FromRole="Likes" ToRole="Product" />
         </EntityType>
         <EntityType Name="MemberAccount">
           <Key>
             <PropertyRef Name="MemberID" />
           </Key>
           <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MemberAcc" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="MemberPw" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MemberAcc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MemberPw" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TWorNOT" Type="Boolean" Nullable="false" />
           <Property Name="RegionID" Type="Int32" Nullable="false" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BackUpEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MemPic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Comment" Relationship="iSpanProjectModel.FK_Comment_MemberAccount" FromRole="MemberAccount" ToRole="Comment" />
-          <NavigationProperty Name="Follows" Relationship="iSpanProjectModel.FK_Follows_MemberAccount" FromRole="MemberAccount" ToRole="Follows" />
-          <NavigationProperty Name="Follows1" Relationship="iSpanProjectModel.FK_Follows_MemberAccount1" FromRole="MemberAccount" ToRole="Follows" />
-          <NavigationProperty Name="Likes" Relationship="iSpanProjectModel.FK_Likes_MemberAccount" FromRole="MemberAccount" ToRole="Likes" />
-          <NavigationProperty Name="RegionList" Relationship="iSpanProjectModel.FK_MemberAccount_RegionList" FromRole="MemberAccount" ToRole="RegionList" />
-          <NavigationProperty Name="Orders" Relationship="iSpanProjectModel.FK_Orders_MemberAccount" FromRole="MemberAccount" ToRole="Orders" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_SalesCourt_MemberAccount" FromRole="MemberAccount" ToRole="Product" />
-          <NavigationProperty Name="OfficialCoupons" Relationship="iSpanProjectModel.FK_Wallet_MemberAccount" FromRole="MemberAccount" ToRole="OfficialCoupons" />
+          <Property Name="MemPic" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_MemberAccount" FromRole="MemberAccount" ToRole="Comment" />
+          <NavigationProperty Name="Follows" Relationship="Self.FK_Follows_MemberAccount" FromRole="MemberAccount" ToRole="Follows" />
+          <NavigationProperty Name="Follows1" Relationship="Self.FK_Follows_MemberAccount1" FromRole="MemberAccount" ToRole="Follows" />
+          <NavigationProperty Name="Likes" Relationship="Self.FK_Likes_MemberAccount" FromRole="MemberAccount" ToRole="Likes" />
+          <NavigationProperty Name="RegionList" Relationship="Self.FK_MemberAccount_RegionList" FromRole="MemberAccount" ToRole="RegionList" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_MemberAccount" FromRole="MemberAccount" ToRole="Orders" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_SalesCourt_MemberAccount" FromRole="MemberAccount" ToRole="Product" />
+          <NavigationProperty Name="OfficialCoupons" Relationship="Self.FK_Wallet_MemberAccount" FromRole="MemberAccount" ToRole="OfficialCoupons" />
         </EntityType>
-        <EntityType Name="OfficialCoupons">
+        <EntityType Name="OfficialCoupon">
           <Key>
             <PropertyRef Name="OfficialCouponsID" />
           </Key>
@@ -1025,10 +886,10 @@
           <Property Name="OfficialCouponsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CouponID" Type="Int32" Nullable="false" />
           <Property Name="ExpireN_A" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Coupons" Relationship="iSpanProjectModel.FK_Wallet_Coupons" FromRole="OfficialCoupons" ToRole="Coupons" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_Wallet_MemberAccount" FromRole="OfficialCoupons" ToRole="MemberAccount" />
+          <NavigationProperty Name="Coupon" Relationship="Self.FK_Wallet_Coupons" FromRole="OfficialCoupons" ToRole="Coupons" />
+          <NavigationProperty Name="MemberAccount" Relationship="Self.FK_Wallet_MemberAccount" FromRole="OfficialCoupons" ToRole="MemberAccount" />
         </EntityType>
-        <EntityType Name="OrderDetails">
+        <EntityType Name="OrderDetail">
           <Key>
             <PropertyRef Name="OrderDetailID" />
           </Key>
@@ -1039,68 +900,68 @@
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="ShippingDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="RecieveDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="OutAdr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OutAdr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ShippingStatusID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="iSpanProjectModel.FK_OrderDetails_Orders" FromRole="OrderDetails" ToRole="Orders" />
-          <NavigationProperty Name="ProductDetail" Relationship="iSpanProjectModel.FK_OrderDetails_Product" FromRole="OrderDetails" ToRole="ProductDetail" />
-          <NavigationProperty Name="Shipper" Relationship="iSpanProjectModel.FK_OrderDetails_Shipper" FromRole="OrderDetails" ToRole="Shipper" />
-          <NavigationProperty Name="ShippingStatuses" Relationship="iSpanProjectModel.FK_OrderDetails_ShippingStatuses" FromRole="OrderDetails" ToRole="ShippingStatuses" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderDetails_Orders" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="ProductDetail" Relationship="Self.FK_OrderDetails_Product" FromRole="OrderDetails" ToRole="ProductDetail" />
+          <NavigationProperty Name="Shipper" Relationship="Self.FK_OrderDetails_Shipper" FromRole="OrderDetails" ToRole="Shipper" />
+          <NavigationProperty Name="ShippingStatus" Relationship="Self.FK_OrderDetails_ShippingStatuses" FromRole="OrderDetails" ToRole="ShippingStatuses" />
         </EntityType>
-        <EntityType Name="Orders">
+        <EntityType Name="Order">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
           <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="OrderDatetime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="RecieveAdr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecieveAdr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="FinishDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="CouponID" Type="Int32" Nullable="false" />
           <Property Name="StatusID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Argument" Relationship="iSpanProjectModel.FK_Argument_Orders" FromRole="Orders" ToRole="Argument" />
-          <NavigationProperty Name="Coupons" Relationship="iSpanProjectModel.FK_Orders_Coupons" FromRole="Orders" ToRole="Coupons" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_Orders_MemberAccount" FromRole="Orders" ToRole="MemberAccount" />
-          <NavigationProperty Name="OrderDetails" Relationship="iSpanProjectModel.FK_OrderDetails_Orders" FromRole="Orders" ToRole="OrderDetails" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_Orders_SalesCourt" FromRole="Orders" ToRole="Product" />
-          <NavigationProperty Name="OrderStatuses" Relationship="iSpanProjectModel.FK_Orders_Statuses" FromRole="Orders" ToRole="OrderStatuses" />
+          <NavigationProperty Name="Arguments" Relationship="Self.FK_Argument_Orders" FromRole="Orders" ToRole="Argument" />
+          <NavigationProperty Name="Coupon" Relationship="Self.FK_Orders_Coupons" FromRole="Orders" ToRole="Coupons" />
+          <NavigationProperty Name="MemberAccount" Relationship="Self.FK_Orders_MemberAccount" FromRole="Orders" ToRole="MemberAccount" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Orders" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Orders_SalesCourt" FromRole="Orders" ToRole="Product" />
+          <NavigationProperty Name="OrderStatus" Relationship="Self.FK_Orders_Statuses" FromRole="Orders" ToRole="OrderStatuses" />
         </EntityType>
-        <EntityType Name="OrderStatuses">
+        <EntityType Name="OrderStatus">
           <Key>
             <PropertyRef Name="OrderStatusID" />
           </Key>
           <Property Name="OrderStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderStatusName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="iSpanProjectModel.FK_Orders_Statuses" FromRole="OrderStatuses" ToRole="Orders" />
+          <Property Name="OrderStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Statuses" FromRole="OrderStatuses" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="PaymentID" />
           </Key>
           <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PaymentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Fee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PaymentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
           <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SmallTypeID" Type="Int32" Nullable="false" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="RegionID" Type="Int32" Nullable="false" />
-          <Property Name="AdFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="AdFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ShipperID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Comment" Relationship="iSpanProjectModel.FK_Comment_SalesCourt" FromRole="Product" ToRole="Comment" />
-          <NavigationProperty Name="Likes" Relationship="iSpanProjectModel.FK_Likes_Product" FromRole="Product" ToRole="Likes" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_SalesCourt_MemberAccount" FromRole="Product" ToRole="MemberAccount" />
-          <NavigationProperty Name="Orders" Relationship="iSpanProjectModel.FK_Orders_SalesCourt" FromRole="Product" ToRole="Orders" />
-          <NavigationProperty Name="ProductDetail" Relationship="iSpanProjectModel.FK_Product_SalesCourt" FromRole="Product" ToRole="ProductDetail" />
-          <NavigationProperty Name="Shipper" Relationship="iSpanProjectModel.FK_Product_Shipper" FromRole="Product" ToRole="Shipper" />
-          <NavigationProperty Name="ProductPic" Relationship="iSpanProjectModel.FK_ProductPic_Product" FromRole="Product" ToRole="ProductPic" />
-          <NavigationProperty Name="RegionList" Relationship="iSpanProjectModel.FK_SalesCourt_RegionList" FromRole="Product" ToRole="RegionList" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_SalesCourt" FromRole="Product" ToRole="Comment" />
+          <NavigationProperty Name="Likes" Relationship="Self.FK_Likes_Product" FromRole="Product" ToRole="Likes" />
+          <NavigationProperty Name="MemberAccount" Relationship="Self.FK_SalesCourt_MemberAccount" FromRole="Product" ToRole="MemberAccount" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_SalesCourt" FromRole="Product" ToRole="Orders" />
+          <NavigationProperty Name="ProductDetails" Relationship="Self.FK_Product_SalesCourt" FromRole="Product" ToRole="ProductDetail" />
+          <NavigationProperty Name="Shipper" Relationship="Self.FK_Product_Shipper" FromRole="Product" ToRole="Shipper" />
+          <NavigationProperty Name="ProductPics" Relationship="Self.FK_ProductPic_Product" FromRole="Product" ToRole="ProductPic" />
+          <NavigationProperty Name="RegionList" Relationship="Self.FK_SalesCourt_RegionList" FromRole="Product" ToRole="RegionList" />
         </EntityType>
         <EntityType Name="ProductDetail">
           <Key>
@@ -1108,12 +969,12 @@
           </Key>
           <Property Name="ProductDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="Style" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Style" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="OrderDetails" Relationship="iSpanProjectModel.FK_OrderDetails_Product" FromRole="ProductDetail" ToRole="OrderDetails" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_Product_SalesCourt" FromRole="ProductDetail" ToRole="Product" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Product" FromRole="ProductDetail" ToRole="OrderDetails" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_SalesCourt" FromRole="ProductDetail" ToRole="Product" />
         </EntityType>
         <EntityType Name="ProductPic">
           <Key>
@@ -1121,49 +982,49 @@
           </Key>
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="PicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="picture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_ProductPic_Product" FromRole="ProductPic" ToRole="Product" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductPic_Product" FromRole="ProductPic" ToRole="Product" />
         </EntityType>
         <EntityType Name="RegionList">
           <Key>
             <PropertyRef Name="RegionID" />
           </Key>
           <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RegionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CountryID" Type="Int32" />
-          <NavigationProperty Name="CountryList" Relationship="iSpanProjectModel.FK_RegionList_CountryList" FromRole="RegionList" ToRole="CountryList" />
-          <NavigationProperty Name="MemberAccount" Relationship="iSpanProjectModel.FK_MemberAccount_RegionList" FromRole="RegionList" ToRole="MemberAccount" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_SalesCourt_RegionList" FromRole="RegionList" ToRole="Product" />
+          <NavigationProperty Name="CountryList" Relationship="Self.FK_RegionList_CountryList" FromRole="RegionList" ToRole="CountryList" />
+          <NavigationProperty Name="MemberAccounts" Relationship="Self.FK_MemberAccount_RegionList" FromRole="RegionList" ToRole="MemberAccount" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_SalesCourt_RegionList" FromRole="RegionList" ToRole="Product" />
         </EntityType>
         <EntityType Name="Shipper">
           <Key>
             <PropertyRef Name="ShipperID" />
           </Key>
           <Property Name="ShipperID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ShipperName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="OrderDetails" Relationship="iSpanProjectModel.FK_OrderDetails_Shipper" FromRole="Shipper" ToRole="OrderDetails" />
-          <NavigationProperty Name="Product" Relationship="iSpanProjectModel.FK_Product_Shipper" FromRole="Shipper" ToRole="Product" />
+          <Property Name="ShipperName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Shipper" FromRole="Shipper" ToRole="OrderDetails" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Shipper" FromRole="Shipper" ToRole="Product" />
         </EntityType>
-        <EntityType Name="ShippingStatuses">
+        <EntityType Name="ShippingStatus">
           <Key>
             <PropertyRef Name="ShippingStatusID" />
           </Key>
           <Property Name="ShippingStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ShipStatusName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="OrderDetails" Relationship="iSpanProjectModel.FK_OrderDetails_ShippingStatuses" FromRole="ShippingStatuses" ToRole="OrderDetails" />
+          <Property Name="ShipStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_ShippingStatuses" FromRole="ShippingStatuses" ToRole="OrderDetails" />
         </EntityType>
         <EntityType Name="SmallType">
           <Key>
             <PropertyRef Name="SmallTypeID" />
           </Key>
           <Property Name="SmallTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SmallTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SmallTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BigTypeID" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_ArguePic_Argument">
-          <End Type="iSpanProjectModel.Argument" Role="Argument" Multiplicity="1" />
-          <End Type="iSpanProjectModel.ArguePic" Role="ArguePic" Multiplicity="*" />
+          <End Role="Argument" Type="Self.Argument" Multiplicity="1" />
+          <End Role="ArguePic" Type="Self.ArguePic" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Argument">
               <PropertyRef Name="ArgumentID" />
@@ -1174,8 +1035,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Argument_ArgumentType">
-          <End Type="iSpanProjectModel.ArgumentType" Role="ArgumentType" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Argument" Role="Argument" Multiplicity="*" />
+          <End Role="ArgumentType" Type="Self.ArgumentType" Multiplicity="1" />
+          <End Role="Argument" Type="Self.Argument" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ArgumentType">
               <PropertyRef Name="ArgumentTypeID" />
@@ -1186,8 +1047,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Argument_Orders">
-          <End Type="iSpanProjectModel.Orders" Role="Orders" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Argument" Role="Argument" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Argument" Type="Self.Argument" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="OrderID" />
@@ -1198,8 +1059,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_MemberAccount">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Comment" Role="Comment" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1210,8 +1071,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_SalesCourt">
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Comment" Role="Comment" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ProductID" />
@@ -1222,8 +1083,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CommentPic_Comment">
-          <End Type="iSpanProjectModel.Comment" Role="Comment" Multiplicity="1" />
-          <End Type="iSpanProjectModel.CommentPic" Role="CommentPic" Multiplicity="*" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="CommentPic" Type="Self.CommentPic" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Comment">
               <PropertyRef Name="CommentID" />
@@ -1234,8 +1095,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RegionList_CountryList">
-          <End Type="iSpanProjectModel.CountryList" Role="CountryList" Multiplicity="0..1" />
-          <End Type="iSpanProjectModel.RegionList" Role="RegionList" Multiplicity="*" />
+          <End Role="CountryList" Type="Self.CountryList" Multiplicity="0..1" />
+          <End Role="RegionList" Type="Self.RegionList" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CountryList">
               <PropertyRef Name="CountryID" />
@@ -1246,8 +1107,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Coupons">
-          <End Type="iSpanProjectModel.Coupons" Role="Coupons" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Orders" Role="Orders" Multiplicity="*" />
+          <End Role="Coupons" Type="Self.Coupon" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Coupons">
               <PropertyRef Name="CouponID" />
@@ -1258,8 +1119,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Wallet_Coupons">
-          <End Type="iSpanProjectModel.Coupons" Role="Coupons" Multiplicity="1" />
-          <End Type="iSpanProjectModel.OfficialCoupons" Role="OfficialCoupons" Multiplicity="*" />
+          <End Role="Coupons" Type="Self.Coupon" Multiplicity="1" />
+          <End Role="OfficialCoupons" Type="Self.OfficialCoupon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Coupons">
               <PropertyRef Name="CouponID" />
@@ -1270,8 +1131,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FAQ_FAQType">
-          <End Type="iSpanProjectModel.FAQType" Role="FAQType" Multiplicity="1" />
-          <End Type="iSpanProjectModel.FAQ" Role="FAQ" Multiplicity="*" />
+          <End Role="FAQType" Type="Self.FAQType" Multiplicity="1" />
+          <End Role="FAQ" Type="Self.FAQ" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FAQType">
               <PropertyRef Name="FAQTypeID" />
@@ -1282,8 +1143,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Follows_MemberAccount">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Follows" Role="Follows" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="Follows" Type="Self.Follow" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1294,8 +1155,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Follows_MemberAccount1">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Follows" Role="Follows" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="Follows" Type="Self.Follow" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1306,8 +1167,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Likes_MemberAccount">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Likes" Role="Likes" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="Likes" Type="Self.Like" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1318,8 +1179,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Likes_Product">
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Likes" Role="Likes" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Likes" Type="Self.Like" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ProductID" />
@@ -1330,8 +1191,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MemberAccount_RegionList">
-          <End Type="iSpanProjectModel.RegionList" Role="RegionList" Multiplicity="1" />
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="*" />
+          <End Role="RegionList" Type="Self.RegionList" Multiplicity="1" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RegionList">
               <PropertyRef Name="RegionID" />
@@ -1342,8 +1203,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_MemberAccount">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Orders" Role="Orders" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1354,8 +1215,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SalesCourt_MemberAccount">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1366,8 +1227,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Wallet_MemberAccount">
-          <End Type="iSpanProjectModel.MemberAccount" Role="MemberAccount" Multiplicity="1" />
-          <End Type="iSpanProjectModel.OfficialCoupons" Role="OfficialCoupons" Multiplicity="*" />
+          <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+          <End Role="OfficialCoupons" Type="Self.OfficialCoupon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberAccount">
               <PropertyRef Name="MemberID" />
@@ -1378,8 +1239,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetails_Orders">
-          <End Type="iSpanProjectModel.Orders" Role="Orders" Multiplicity="1" />
-          <End Type="iSpanProjectModel.OrderDetails" Role="OrderDetails" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="OrderID" />
@@ -1390,8 +1251,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetails_Product">
-          <End Type="iSpanProjectModel.ProductDetail" Role="ProductDetail" Multiplicity="1" />
-          <End Type="iSpanProjectModel.OrderDetails" Role="OrderDetails" Multiplicity="*" />
+          <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductDetail">
               <PropertyRef Name="ProductDetailID" />
@@ -1402,8 +1263,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetails_Shipper">
-          <End Type="iSpanProjectModel.Shipper" Role="Shipper" Multiplicity="1" />
-          <End Type="iSpanProjectModel.OrderDetails" Role="OrderDetails" Multiplicity="*" />
+          <End Role="Shipper" Type="Self.Shipper" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shipper">
               <PropertyRef Name="ShipperID" />
@@ -1414,8 +1275,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetails_ShippingStatuses">
-          <End Type="iSpanProjectModel.ShippingStatuses" Role="ShippingStatuses" Multiplicity="1" />
-          <End Type="iSpanProjectModel.OrderDetails" Role="OrderDetails" Multiplicity="*" />
+          <End Role="ShippingStatuses" Type="Self.ShippingStatus" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ShippingStatuses">
               <PropertyRef Name="ShippingStatusID" />
@@ -1426,8 +1287,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_SalesCourt">
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Orders" Role="Orders" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ProductID" />
@@ -1438,8 +1299,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Statuses">
-          <End Type="iSpanProjectModel.OrderStatuses" Role="OrderStatuses" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Orders" Role="Orders" Multiplicity="*" />
+          <End Role="OrderStatuses" Type="Self.OrderStatus" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OrderStatuses">
               <PropertyRef Name="OrderStatusID" />
@@ -1450,8 +1311,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_SalesCourt">
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="iSpanProjectModel.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ProductID" />
@@ -1462,8 +1323,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Shipper">
-          <End Type="iSpanProjectModel.Shipper" Role="Shipper" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="*" />
+          <End Role="Shipper" Type="Self.Shipper" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shipper">
               <PropertyRef Name="ShipperID" />
@@ -1474,8 +1335,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductPic_Product">
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="iSpanProjectModel.ProductPic" Role="ProductPic" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductPic" Type="Self.ProductPic" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ProductID" />
@@ -1486,8 +1347,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SalesCourt_RegionList">
-          <End Type="iSpanProjectModel.RegionList" Role="RegionList" Multiplicity="1" />
-          <End Type="iSpanProjectModel.Product" Role="Product" Multiplicity="*" />
+          <End Role="RegionList" Type="Self.RegionList" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RegionList">
               <PropertyRef Name="RegionID" />
@@ -1497,280 +1358,421 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="iSpanProjectEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADs" EntityType="Self.AD" />
+          <EntitySet Name="ArguePics" EntityType="Self.ArguePic" />
+          <EntitySet Name="Arguments" EntityType="Self.Argument" />
+          <EntitySet Name="ArgumentTypes" EntityType="Self.ArgumentType" />
+          <EntitySet Name="BigTypes" EntityType="Self.BigType" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="CommentPics" EntityType="Self.CommentPic" />
+          <EntitySet Name="CountryLists" EntityType="Self.CountryList" />
+          <EntitySet Name="Coupons" EntityType="Self.Coupon" />
+          <EntitySet Name="FAQs" EntityType="Self.FAQ" />
+          <EntitySet Name="FAQTypes" EntityType="Self.FAQType" />
+          <EntitySet Name="Follows" EntityType="Self.Follow" />
+          <EntitySet Name="Likes" EntityType="Self.Like" />
+          <EntitySet Name="MemberAccounts" EntityType="Self.MemberAccount" />
+          <EntitySet Name="OfficialCoupons" EntityType="Self.OfficialCoupon" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatus" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductDetails" EntityType="Self.ProductDetail" />
+          <EntitySet Name="ProductPics" EntityType="Self.ProductPic" />
+          <EntitySet Name="RegionLists" EntityType="Self.RegionList" />
+          <EntitySet Name="Shippers" EntityType="Self.Shipper" />
+          <EntitySet Name="ShippingStatuses" EntityType="Self.ShippingStatus" />
+          <EntitySet Name="SmallTypes" EntityType="Self.SmallType" />
+          <AssociationSet Name="FK_ArguePic_Argument" Association="Self.FK_ArguePic_Argument">
+            <End Role="Argument" EntitySet="Arguments" />
+            <End Role="ArguePic" EntitySet="ArguePics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Argument_ArgumentType" Association="Self.FK_Argument_ArgumentType">
+            <End Role="ArgumentType" EntitySet="ArgumentTypes" />
+            <End Role="Argument" EntitySet="Arguments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Argument_Orders" Association="Self.FK_Argument_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Argument" EntitySet="Arguments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_MemberAccount" Association="Self.FK_Comment_MemberAccount">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_SalesCourt" Association="Self.FK_Comment_SalesCourt">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentPic_Comment" Association="Self.FK_CommentPic_Comment">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="CommentPic" EntitySet="CommentPics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegionList_CountryList" Association="Self.FK_RegionList_CountryList">
+            <End Role="CountryList" EntitySet="CountryLists" />
+            <End Role="RegionList" EntitySet="RegionLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Coupons" Association="Self.FK_Orders_Coupons">
+            <End Role="Coupons" EntitySet="Coupons" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wallet_Coupons" Association="Self.FK_Wallet_Coupons">
+            <End Role="Coupons" EntitySet="Coupons" />
+            <End Role="OfficialCoupons" EntitySet="OfficialCoupons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAQ_FAQType" Association="Self.FK_FAQ_FAQType">
+            <End Role="FAQType" EntitySet="FAQTypes" />
+            <End Role="FAQ" EntitySet="FAQs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follows_MemberAccount" Association="Self.FK_Follows_MemberAccount">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="Follows" EntitySet="Follows" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follows_MemberAccount1" Association="Self.FK_Follows_MemberAccount1">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="Follows" EntitySet="Follows" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Likes_MemberAccount" Association="Self.FK_Likes_MemberAccount">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="Likes" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Likes_Product" Association="Self.FK_Likes_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Likes" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberAccount_RegionList" Association="Self.FK_MemberAccount_RegionList">
+            <End Role="RegionList" EntitySet="RegionLists" />
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_MemberAccount" Association="Self.FK_Orders_MemberAccount">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesCourt_MemberAccount" Association="Self.FK_SalesCourt_MemberAccount">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wallet_MemberAccount" Association="Self.FK_Wallet_MemberAccount">
+            <End Role="MemberAccount" EntitySet="MemberAccounts" />
+            <End Role="OfficialCoupons" EntitySet="OfficialCoupons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Product" Association="Self.FK_OrderDetails_Product">
+            <End Role="ProductDetail" EntitySet="ProductDetails" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Shipper" Association="Self.FK_OrderDetails_Shipper">
+            <End Role="Shipper" EntitySet="Shippers" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_ShippingStatuses" Association="Self.FK_OrderDetails_ShippingStatuses">
+            <End Role="ShippingStatuses" EntitySet="ShippingStatuses" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_SalesCourt" Association="Self.FK_Orders_SalesCourt">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Statuses" Association="Self.FK_Orders_Statuses">
+            <End Role="OrderStatuses" EntitySet="OrderStatuses" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_SalesCourt" Association="Self.FK_Product_SalesCourt">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductDetail" EntitySet="ProductDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Shipper" Association="Self.FK_Product_Shipper">
+            <End Role="Shipper" EntitySet="Shippers" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPic_Product" Association="Self.FK_ProductPic_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductPic" EntitySet="ProductPics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesCourt_RegionList" Association="Self.FK_SalesCourt_RegionList">
+            <End Role="RegionList" EntitySet="RegionLists" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="iSpanProjectEntities" >
-          <EntitySetMapping Name="AD">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iSpanProjectModelStoreContainer" CdmEntityContainer="iSpanProjectEntities2">
+          <EntitySetMapping Name="ADs">
             <EntityTypeMapping TypeName="iSpanProjectModel.AD">
               <MappingFragment StoreEntitySet="AD">
-                <ScalarProperty Name="AdFee" ColumnName="AdFee" />
-                <ScalarProperty Name="AdName" ColumnName="AdName" />
                 <ScalarProperty Name="AdID" ColumnName="AdID" />
+                <ScalarProperty Name="AdName" ColumnName="AdName" />
+                <ScalarProperty Name="AdFee" ColumnName="AdFee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ArguePic">
+          <EntitySetMapping Name="ArguePics">
             <EntityTypeMapping TypeName="iSpanProjectModel.ArguePic">
               <MappingFragment StoreEntitySet="ArguePic">
-                <ScalarProperty Name="ArguePic1" ColumnName="ArguePic" />
-                <ScalarProperty Name="ArguementID" ColumnName="ArguementID" />
                 <ScalarProperty Name="ArguePicID" ColumnName="ArguePicID" />
+                <ScalarProperty Name="ArguementID" ColumnName="ArguementID" />
+                <ScalarProperty Name="ArguePic1" ColumnName="ArguePic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Argument">
+          <EntitySetMapping Name="Arguments">
             <EntityTypeMapping TypeName="iSpanProjectModel.Argument">
               <MappingFragment StoreEntitySet="Argument">
-                <ScalarProperty Name="ArgumentTypeID" ColumnName="ArgumentTypeID" />
-                <ScalarProperty Name="Reason" ColumnName="Reason" />
-                <ScalarProperty Name="ChangeorReturn" ColumnName="ChangeorReturn" />
-                <ScalarProperty Name="ArgumentID" ColumnName="ArgumentID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ArgumentID" ColumnName="ArgumentID" />
+                <ScalarProperty Name="ChangeorReturn" ColumnName="ChangeorReturn" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="ArgumentTypeID" ColumnName="ArgumentTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ArgumentType">
+          <EntitySetMapping Name="ArgumentTypes">
             <EntityTypeMapping TypeName="iSpanProjectModel.ArgumentType">
               <MappingFragment StoreEntitySet="ArgumentType">
-                <ScalarProperty Name="ArgumentTypeName" ColumnName="ArgumentTypeName" />
                 <ScalarProperty Name="ArgumentTypeID" ColumnName="ArgumentTypeID" />
+                <ScalarProperty Name="ArgumentTypeName" ColumnName="ArgumentTypeName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BigType">
+          <EntitySetMapping Name="BigTypes">
             <EntityTypeMapping TypeName="iSpanProjectModel.BigType">
               <MappingFragment StoreEntitySet="BigType">
-                <ScalarProperty Name="BigTypeName" ColumnName="BigTypeName" />
                 <ScalarProperty Name="BigTypeID" ColumnName="BigTypeID" />
+                <ScalarProperty Name="BigTypeName" ColumnName="BigTypeName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Comment">
+          <EntitySetMapping Name="Comments">
             <EntityTypeMapping TypeName="iSpanProjectModel.Comment">
               <MappingFragment StoreEntitySet="Comment">
-                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
-                <ScalarProperty Name="Star" ColumnName="Star" />
-                <ScalarProperty Name="Comment1" ColumnName="Comment" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CommentPic">
+          <EntitySetMapping Name="CommentPics">
             <EntityTypeMapping TypeName="iSpanProjectModel.CommentPic">
               <MappingFragment StoreEntitySet="CommentPic">
-                <ScalarProperty Name="CommentPic1" ColumnName="CommentPic" />
-                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
                 <ScalarProperty Name="CommentPicID" ColumnName="CommentPicID" />
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+                <ScalarProperty Name="CommentPic1" ColumnName="CommentPic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CountryList">
+          <EntitySetMapping Name="CountryLists">
             <EntityTypeMapping TypeName="iSpanProjectModel.CountryList">
               <MappingFragment StoreEntitySet="CountryList">
-                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
                 <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Coupons">
-            <EntityTypeMapping TypeName="iSpanProjectModel.Coupons">
+            <EntityTypeMapping TypeName="iSpanProjectModel.Coupon">
               <MappingFragment StoreEntitySet="Coupons">
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="ExpiredDate" ColumnName="ExpiredDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="CouponName" ColumnName="CouponName" />
                 <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="CouponName" ColumnName="CouponName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ExpiredDate" ColumnName="ExpiredDate" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FAQ">
+          <EntitySetMapping Name="FAQs">
             <EntityTypeMapping TypeName="iSpanProjectModel.FAQ">
               <MappingFragment StoreEntitySet="FAQ">
-                <ScalarProperty Name="FAQTypeID" ColumnName="FAQTypeID" />
-                <ScalarProperty Name="Question" ColumnName="Question" />
-                <ScalarProperty Name="Answer" ColumnName="Answer" />
                 <ScalarProperty Name="FAQID" ColumnName="FAQID" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="FAQTypeID" ColumnName="FAQTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FAQType">
+          <EntitySetMapping Name="FAQTypes">
             <EntityTypeMapping TypeName="iSpanProjectModel.FAQType">
               <MappingFragment StoreEntitySet="FAQType">
-                <ScalarProperty Name="FAQTypeName" ColumnName="FAQTypeName" />
                 <ScalarProperty Name="FAQTypeID" ColumnName="FAQTypeID" />
+                <ScalarProperty Name="FAQTypeName" ColumnName="FAQTypeName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Follows">
-            <EntityTypeMapping TypeName="iSpanProjectModel.Follows">
+            <EntityTypeMapping TypeName="iSpanProjectModel.Follow">
               <MappingFragment StoreEntitySet="Follows">
-                <ScalarProperty Name="FollowedMemID" ColumnName="FollowedMemID" />
-                <ScalarProperty Name="FollowID" ColumnName="FollowID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="FollowID" ColumnName="FollowID" />
+                <ScalarProperty Name="FollowedMemID" ColumnName="FollowedMemID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Likes">
-            <EntityTypeMapping TypeName="iSpanProjectModel.Likes">
+            <EntityTypeMapping TypeName="iSpanProjectModel.Like">
               <MappingFragment StoreEntitySet="Likes">
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="LikeID" ColumnName="LikeID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="LikeID" ColumnName="LikeID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MemberAccount">
+          <EntitySetMapping Name="MemberAccounts">
             <EntityTypeMapping TypeName="iSpanProjectModel.MemberAccount">
               <MappingFragment StoreEntitySet="MemberAccount">
-                <ScalarProperty Name="MemPic" ColumnName="MemPic" />
-                <ScalarProperty Name="Bio" ColumnName="Bio" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="NickName" ColumnName="NickName" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="BackUpEmail" ColumnName="BackUpEmail" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-                <ScalarProperty Name="TWorNOT" ColumnName="TWorNOT" />
-                <ScalarProperty Name="MemberPw" ColumnName="MemberPw" />
-                <ScalarProperty Name="MemberAcc" ColumnName="MemberAcc" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberAcc" ColumnName="MemberAcc" />
+                <ScalarProperty Name="MemberPw" ColumnName="MemberPw" />
+                <ScalarProperty Name="TWorNOT" ColumnName="TWorNOT" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BackUpEmail" ColumnName="BackUpEmail" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="MemPic" ColumnName="MemPic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OfficialCoupons">
-            <EntityTypeMapping TypeName="iSpanProjectModel.OfficialCoupons">
+            <EntityTypeMapping TypeName="iSpanProjectModel.OfficialCoupon">
               <MappingFragment StoreEntitySet="OfficialCoupons">
-                <ScalarProperty Name="ExpireN_A" ColumnName="ExpireN_A" />
-                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
-                <ScalarProperty Name="OfficialCouponsID" ColumnName="OfficialCouponsID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="OfficialCouponsID" ColumnName="OfficialCouponsID" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="ExpireN_A" ColumnName="ExpireN_A" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="iSpanProjectModel.OrderDetails">
+            <EntityTypeMapping TypeName="iSpanProjectModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetails">
-                <ScalarProperty Name="ShippingStatusID" ColumnName="ShippingStatusID" />
-                <ScalarProperty Name="OutAdr" ColumnName="OutAdr" />
-                <ScalarProperty Name="RecieveDate" ColumnName="RecieveDate" />
-                <ScalarProperty Name="ShippingDate" ColumnName="ShippingDate" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
-                <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ShippingDate" ColumnName="ShippingDate" />
+                <ScalarProperty Name="RecieveDate" ColumnName="RecieveDate" />
+                <ScalarProperty Name="OutAdr" ColumnName="OutAdr" />
+                <ScalarProperty Name="ShippingStatusID" ColumnName="ShippingStatusID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="iSpanProjectModel.Orders">
+            <EntityTypeMapping TypeName="iSpanProjectModel.Order">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
-                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="RecieveAdr" ColumnName="RecieveAdr" />
-                <ScalarProperty Name="OrderDatetime" ColumnName="OrderDatetime" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="OrderDatetime" ColumnName="OrderDatetime" />
+                <ScalarProperty Name="RecieveAdr" ColumnName="RecieveAdr" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderStatuses">
-            <EntityTypeMapping TypeName="iSpanProjectModel.OrderStatuses">
+            <EntityTypeMapping TypeName="iSpanProjectModel.OrderStatus">
               <MappingFragment StoreEntitySet="OrderStatuses">
-                <ScalarProperty Name="OrderStatusName" ColumnName="OrderStatusName" />
                 <ScalarProperty Name="OrderStatusID" ColumnName="OrderStatusID" />
+                <ScalarProperty Name="OrderStatusName" ColumnName="OrderStatusName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Payment">
+          <EntitySetMapping Name="Payments">
             <EntityTypeMapping TypeName="iSpanProjectModel.Payment">
               <MappingFragment StoreEntitySet="Payment">
-                <ScalarProperty Name="Fee" ColumnName="Fee" />
-                <ScalarProperty Name="PaymentName" ColumnName="PaymentName" />
                 <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="PaymentName" ColumnName="PaymentName" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Product">
+          <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="iSpanProjectModel.Product">
               <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="AdFee" ColumnName="AdFee" />
-                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="SmallTypeID" ColumnName="SmallTypeID" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SmallTypeID" ColumnName="SmallTypeID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="AdFee" ColumnName="AdFee" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductDetail">
+          <EntitySetMapping Name="ProductDetails">
             <EntityTypeMapping TypeName="iSpanProjectModel.ProductDetail">
               <MappingFragment StoreEntitySet="ProductDetail">
-                <ScalarProperty Name="Pic" ColumnName="Pic" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="Style" ColumnName="Style" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Style" ColumnName="Style" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductPic">
+          <EntitySetMapping Name="ProductPics">
             <EntityTypeMapping TypeName="iSpanProjectModel.ProductPic">
               <MappingFragment StoreEntitySet="ProductPic">
-                <ScalarProperty Name="picture" ColumnName="picture" />
-                <ScalarProperty Name="PicID" ColumnName="PicID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="PicID" ColumnName="PicID" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RegionList">
+          <EntitySetMapping Name="RegionLists">
             <EntityTypeMapping TypeName="iSpanProjectModel.RegionList">
               <MappingFragment StoreEntitySet="RegionList">
-                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
                 <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Shipper">
+          <EntitySetMapping Name="Shippers">
             <EntityTypeMapping TypeName="iSpanProjectModel.Shipper">
               <MappingFragment StoreEntitySet="Shipper">
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
                 <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ShippingStatuses">
-            <EntityTypeMapping TypeName="iSpanProjectModel.ShippingStatuses">
+            <EntityTypeMapping TypeName="iSpanProjectModel.ShippingStatus">
               <MappingFragment StoreEntitySet="ShippingStatuses">
-                <ScalarProperty Name="ShipStatusName" ColumnName="ShipStatusName" />
                 <ScalarProperty Name="ShippingStatusID" ColumnName="ShippingStatusID" />
+                <ScalarProperty Name="ShipStatusName" ColumnName="ShipStatusName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SmallType">
+          <EntitySetMapping Name="SmallTypes">
             <EntityTypeMapping TypeName="iSpanProjectModel.SmallType">
               <MappingFragment StoreEntitySet="SmallType">
-                <ScalarProperty Name="BigTypeID" ColumnName="BigTypeID" />
-                <ScalarProperty Name="SmallTypeName" ColumnName="SmallTypeName" />
                 <ScalarProperty Name="SmallTypeID" ColumnName="SmallTypeID" />
+                <ScalarProperty Name="SmallTypeName" ColumnName="SmallTypeName" />
+                <ScalarProperty Name="BigTypeID" ColumnName="BigTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>
-</Mapping></edmx:Mappings>
+      </Mapping>
+    </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -1782,9 +1784,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
       </DesignerInfoPropertySet>
     </Options>

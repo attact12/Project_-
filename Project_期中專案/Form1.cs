@@ -12,7 +12,7 @@ namespace Project_期中專案
 {
     public partial class Form1 : Form
     {
-        iSpanProjectEntities dbindex = new iSpanProjectEntities();
+        iSpanProjectEntities2 dbindex = new iSpanProjectEntities2();
         byte[] bytes;
         public string account;
         
@@ -40,7 +40,7 @@ namespace Project_期中專案
             list.Bio = txt_bio.Text;
             list.MemPic = bytes;
 
-            this.dbindex.MemberAccount.Add(list);
+            this.dbindex.MemberAccounts.Add(list);
             this.dbindex.SaveChanges();
             MessageBox.Show("新增成功!");
         }
@@ -67,10 +67,10 @@ namespace Project_期中專案
         }
         private void cbload()
         {
-            var q = from i in dbindex.CountryList
+            var q = from i in dbindex.CountryLists
                     orderby i.CountryID ascending
                     select i.CountryName;
-            var q1 = from i in dbindex.RegionList
+            var q1 = from i in dbindex.RegionLists
                      where i.CountryID == 1
                      orderby i.RegionID ascending
                      select i.RegionName;
@@ -85,11 +85,11 @@ namespace Project_期中專案
 
         private void cmbo_city_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var q = from i in dbindex.CountryList
+            var q = from i in dbindex.CountryLists
                     where i.CountryName == cmbo_city.Text
                     orderby i.CountryID
                     select i.CountryID;
-            var q1 = from i in dbindex.RegionList
+            var q1 = from i in dbindex.RegionLists
                      where i.CountryID == q.FirstOrDefault()
                      orderby i.RegionID ascending
                      select i.RegionName;

@@ -12,14 +12,14 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class OfficialCoupons
+    public partial class OfficialCoupon
     {
         public int MemberID { get; set; }
         public int OfficialCouponsID { get; set; }
         public int CouponID { get; set; }
         public bool ExpireN_A { get; set; }
     
-        public virtual Coupons Coupons { get; set; }
+        public virtual Coupon Coupon { get; set; }
         public virtual MemberAccount MemberAccount { get; set; }
     }
 }

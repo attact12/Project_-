@@ -13,7 +13,7 @@ namespace Project_期中專案
     public partial class member_cre : Form
     {
         bool isClosed = true;
-        iSpanProjectEntities dbContext = new iSpanProjectEntities();
+        iSpanProjectEntities2 dbContext = new iSpanProjectEntities2();
         public member_cre()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace Project_期中專案
             var account1 = txtAccount.Text;
             
 
-            var q = from i in dbContext.MemberAccount
+            var q = from i in dbContext.MemberAccounts
                     where i.MemberAcc == account1
                     select i;
             if (q.Any())

@@ -17,13 +17,13 @@ namespace Project_期中專案
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CountryList()
         {
-            this.RegionList = new HashSet<RegionList>();
+            this.RegionLists = new HashSet<RegionList>();
         }
     
         public int CountryID { get; set; }
         public string CountryName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegionList> RegionList { get; set; }
+        public virtual ICollection<RegionList> RegionLists { get; set; }
     }
 }

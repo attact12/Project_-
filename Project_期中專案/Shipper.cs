@@ -17,8 +17,8 @@ namespace Project_期中專案
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Shipper()
         {
-            this.OrderDetails = new HashSet<OrderDetails>();
-            this.Product = new HashSet<Product>();
+            this.OrderDetails = new HashSet<OrderDetail>();
+            this.Products = new HashSet<Product>();
         }
     
         public int ShipperID { get; set; }
@@ -26,8 +26,8 @@ namespace Project_期中專案
         public string Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Project_期中專案
 {
     public partial class ForgetPas : Form
     {
-        iSpanProjectEntities dbContext = new iSpanProjectEntities();
+        iSpanProjectEntities2 dbContext = new iSpanProjectEntities2();
         public ForgetPas()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace Project_期中專案
         private void button1_Click(object sender, EventArgs e)
         {
             MemberAccount acc = new MemberAccount();
-            var q = (from i in dbContext.MemberAccount
+            var q = (from i in dbContext.MemberAccounts
                     where i.MemberAcc==txtAcc.Text
                     select i).FirstOrDefault();
             if (!(q == null))

@@ -12,7 +12,7 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderDetails
+    public partial class OrderDetail
     {
         public int OrderDetailID { get; set; }
         public int OrderID { get; set; }
@@ -24,9 +24,9 @@ namespace Project_期中專案
         public string OutAdr { get; set; }
         public int ShippingStatusID { get; set; }
     
-        public virtual Orders Orders { get; set; }
+        public virtual Order Order { get; set; }
         public virtual ProductDetail ProductDetail { get; set; }
         public virtual Shipper Shipper { get; set; }
-        public virtual ShippingStatuses ShippingStatuses { get; set; }
+        public virtual ShippingStatus ShippingStatus { get; set; }
     }
 }

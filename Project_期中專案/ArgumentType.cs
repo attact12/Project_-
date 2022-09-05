@@ -17,13 +17,13 @@ namespace Project_期中專案
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ArgumentType()
         {
-            this.Argument = new HashSet<Argument>();
+            this.Arguments = new HashSet<Argument>();
         }
     
         public int ArgumentTypeID { get; set; }
         public string ArgumentTypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Argument> Argument { get; set; }
+        public virtual ICollection<Argument> Arguments { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace Project_期中專案
     public partial class member_center : Form
     {
 
-        iSpanProjectEntities dbContext = new iSpanProjectEntities();
+        iSpanProjectEntities2 dbContext = new iSpanProjectEntities2();
 
         //public string txt{set{ label2.Text = value; } }
         public string account2

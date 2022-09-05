@@ -12,7 +12,7 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class Likes
+    public partial class Like
     {
         public int MemberID { get; set; }
         public int LikeID { get; set; }

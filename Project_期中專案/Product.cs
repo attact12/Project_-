@@ -17,11 +17,11 @@ namespace Project_期中專案
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.Comment = new HashSet<Comment>();
-            this.Likes = new HashSet<Likes>();
-            this.Orders = new HashSet<Orders>();
-            this.ProductDetail = new HashSet<ProductDetail>();
-            this.ProductPic = new HashSet<ProductPic>();
+            this.Comments = new HashSet<Comment>();
+            this.Likes = new HashSet<Like>();
+            this.Orders = new HashSet<Order>();
+            this.ProductDetails = new HashSet<ProductDetail>();
+            this.ProductPics = new HashSet<ProductPic>();
         }
     
         public int ProductID { get; set; }
@@ -34,17 +34,17 @@ namespace Project_期中專案
         public int ShipperID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comment> Comment { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Likes> Likes { get; set; }
+        public virtual ICollection<Like> Likes { get; set; }
         public virtual MemberAccount MemberAccount { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductDetail> ProductDetail { get; set; }
+        public virtual ICollection<ProductDetail> ProductDetails { get; set; }
         public virtual Shipper Shipper { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductPic> ProductPic { get; set; }
+        public virtual ICollection<ProductPic> ProductPics { get; set; }
         public virtual RegionList RegionList { get; set; }
     }
 }

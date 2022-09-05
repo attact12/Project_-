@@ -17,7 +17,7 @@ namespace Project_期中專案
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Comment()
         {
-            this.CommentPic = new HashSet<CommentPic>();
+            this.CommentPics = new HashSet<CommentPic>();
         }
     
         public int ProductID { get; set; }
@@ -29,6 +29,6 @@ namespace Project_期中專案
         public virtual MemberAccount MemberAccount { get; set; }
         public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CommentPic> CommentPic { get; set; }
+        public virtual ICollection<CommentPic> CommentPics { get; set; }
     }
 }

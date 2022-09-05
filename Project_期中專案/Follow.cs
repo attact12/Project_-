@@ -12,7 +12,7 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class Follows
+    public partial class Follow
     {
         public int MemberID { get; set; }
         public int FollowID { get; set; }

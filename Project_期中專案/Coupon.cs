@@ -12,13 +12,13 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class Coupons
+    public partial class Coupon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Coupons()
+        public Coupon()
         {
-            this.Orders = new HashSet<Orders>();
-            this.OfficialCoupons = new HashSet<OfficialCoupons>();
+            this.Orders = new HashSet<Order>();
+            this.OfficialCoupons = new HashSet<OfficialCoupon>();
         }
     
         public int CouponID { get; set; }
@@ -28,8 +28,8 @@ namespace Project_期中專案
         public float Discount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OfficialCoupons> OfficialCoupons { get; set; }
+        public virtual ICollection<OfficialCoupon> OfficialCoupons { get; set; }
     }
 }

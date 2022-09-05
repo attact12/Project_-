@@ -17,8 +17,8 @@ namespace Project_期中專案
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RegionList()
         {
-            this.MemberAccount = new HashSet<MemberAccount>();
-            this.Product = new HashSet<Product>();
+            this.MemberAccounts = new HashSet<MemberAccount>();
+            this.Products = new HashSet<Product>();
         }
     
         public int RegionID { get; set; }
@@ -27,8 +27,8 @@ namespace Project_期中專案
     
         public virtual CountryList CountryList { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MemberAccount> MemberAccount { get; set; }
+        public virtual ICollection<MemberAccount> MemberAccounts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

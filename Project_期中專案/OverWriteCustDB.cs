@@ -12,7 +12,7 @@ namespace Project_期中專案
 {
     public partial class OverWriteCustDB : Form
     {
-        iSpanProjectEntities dbindex = new iSpanProjectEntities();
+        iSpanProjectEntities2 dbindex = new iSpanProjectEntities2();
         public string account2
         {
             get;
@@ -32,7 +32,7 @@ namespace Project_期中專案
         internal void showdata(string account2)
         {
             MemberAccount list = new MemberAccount();
-            var q = (from i in dbindex.MemberAccount
+            var q = (from i in dbindex.MemberAccounts
                      where i.MemberAcc == account2
                      select i).FirstOrDefault();
 
@@ -68,10 +68,10 @@ namespace Project_期中專案
         }
         private void cbload()
         {
-            var q = from i in dbindex.CountryList
+            var q = from i in dbindex.CountryLists
                     orderby i.CountryID ascending
                     select i.CountryName;
-            var q1 = from i in dbindex.RegionList
+            var q1 = from i in dbindex.RegionLists
                      where i.CountryID == 1
                      orderby i.RegionID ascending
                      select i.RegionName;
@@ -85,11 +85,11 @@ namespace Project_期中專案
 
         private void cmbo_city_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var q = from i in dbindex.CountryList
+            var q = from i in dbindex.CountryLists
                     where i.CountryName == cmbo_city.Text
                     orderby i.CountryID
                     select i.CountryID;
-            var q1 = from i in dbindex.RegionList
+            var q1 = from i in dbindex.RegionLists
                      where i.CountryID == q.FirstOrDefault()
                      orderby i.RegionID ascending
                      select i.RegionName;
@@ -104,7 +104,7 @@ namespace Project_期中專案
         {
             
             //MemberAccount q = new MemberAccount() { };
-            var q = (from i in dbindex.MemberAccount
+            var q = (from i in dbindex.MemberAccounts
                     where i.MemberAcc == txtAccount.Text
                     select i).FirstOrDefault();
             if (q == null)

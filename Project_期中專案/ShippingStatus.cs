@@ -12,18 +12,18 @@ namespace Project_期中專案
     using System;
     using System.Collections.Generic;
     
-    public partial class ShippingStatuses
+    public partial class ShippingStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ShippingStatuses()
+        public ShippingStatus()
         {
-            this.OrderDetails = new HashSet<OrderDetails>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
         public int ShippingStatusID { get; set; }
         public string ShipStatusName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
