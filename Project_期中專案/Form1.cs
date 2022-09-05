@@ -29,7 +29,7 @@ namespace Project_期中專案
             list.MemberAcc = txtAccount.Text;
             list.MemberPw = txtPassworld.Text;
             list.TWorNOT = ckbox_yes.Checked;
-            list.RegionID = cmbo_city.SelectedIndex+1;
+            list.RegionID = cmb_are.SelectedIndex+1;
             list.Phone = txt_phon.Text;
             list.Email = txt_mail.Text;
             list.BackUpEmail = txt_backMail.Text;

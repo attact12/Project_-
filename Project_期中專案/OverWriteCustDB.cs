@@ -55,6 +55,7 @@ namespace Project_期中專案
             DTP_BIR.Value = q.Birthday;
             System.IO.MemoryStream ms = new System.IO.MemoryStream(q.MemPic);
             this.pic_box.Image = Image.FromStream(ms);
+            bytes = q.MemPic;
             txt_bio.Text = q.Bio;
 
             Application.DoEvents();
@@ -101,23 +102,28 @@ namespace Project_期中專案
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MemberAccount list = new MemberAccount() { };
+            
+            //MemberAccount q = new MemberAccount() { };
+            var q = (from i in dbindex.MemberAccount
+                    where i.MemberAcc == txtAccount.Text
+                    select i).FirstOrDefault();
+            if (q == null)
+                return;
+            q.MemberAcc = txtAccount.Text;
+            q.MemberPw = txtPassworld.Text;
+            q.TWorNOT = ckbox_yes.Checked;
+            q.RegionID = cmbo_city.SelectedIndex + 1;
+            q.Phone = txt_phon.Text;
+            q.Email = txt_mail.Text;
+            q.BackUpEmail = txt_backMail.Text;
+            q.Address = txtadd.Text;
+            q.NickName = txt_nickName.Text;
+            q.Name = txt_name.Text;
+            q.Birthday = DTP_BIR.Value;
+            q.Bio = txt_bio.Text;
+            q.MemPic = bytes;
 
-            list.MemberAcc = txtAccount.Text;
-            list.MemberPw = txtPassworld.Text;
-            list.TWorNOT = ckbox_yes.Checked;
-            list.RegionID = cmbo_city.SelectedIndex + 1;
-            list.Phone = txt_phon.Text;
-            list.Email = txt_mail.Text;
-            list.BackUpEmail = txt_backMail.Text;
-            list.Address = txtadd.Text;
-            list.NickName = txt_nickName.Text;
-            list.Name = txt_name.Text;
-            list.Birthday = DTP_BIR.Value;
-            list.Bio = txt_bio.Text;
-            list.MemPic = bytes;
-
-            this.dbindex.MemberAccount.Add(list);
+            //this.dbindex.MemberAccount.Add(q);
             this.dbindex.SaveChanges();
             MessageBox.Show("修改成功");
         }
